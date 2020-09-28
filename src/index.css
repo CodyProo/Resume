@@ -1,13 +1,226 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    src: url('./fonts/Roboto-Regular.ttf');
+    font-family: 'roboto-regular';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    src: url('./fonts/Roboto-Bold.ttf');
+    font-family: 'roboto-bold';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'roboto-regular';
+}
+
+header {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background: url('./img/alexandru-acea--WBYxmW4yuw-unsplash.jpg')no-repeat center center/cover fixed;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .9);
+}
+
+header nav {
+    position: relative;
+    z-index: 999;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 50px;
+    position: relative;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+
+header nav h1 {
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+header nav ul li::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 0;
+    bottom: -6px;
+    transition: .6s ease;
+}
+
+header nav ul li.active::before,
+header nav ul li:hover::before {
+    width: 100%;
+    background: #ffffff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.card img {
+    width: 300px;
+    object-fit: cover;
+}
+
+.card {
+    margin: 50px 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.card div {
+    padding: 20px 50px;
+}
+
+.card div p {
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.card div h1 {
+    font-size: 18px;
+}
+
+.details {
+    position: relative;
+    padding: 50px 40px;
+    border: 2px solid #ccc;
+    margin: 40px 0;
+    line-height: 40px;
+}
+
+.details p {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.details span {
+    position: absolute;
+    top: -20px;
+    background: #fff;
+    padding: 0 30px;
+    display: flex;
+    font-weight: 900;
+    font-family: 'roboto-bold';
+    justify-content: center;
+    font-size: 16px;
+}
+
+.bg-landing {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./img/alexandru-acea--WBYxmW4yuw-unsplash.jpg')no-repeat center center/cover fixed;
+}
+
+.bg-landing::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+.bg-landing h1 {
+    position: relative;
+    z-index: 999;
+    color: #fff;
+    font-weight: 100;
+}
+
+.details ul li {
+    list-style: none;
+}
+
+.details ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+@media(min-width: 300px) {
+    header nav ul {
+        display: none;
+    }
+    .container {
+        width: 95%;
+    }
+    .card {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    .bg-landing {
+        height: 100px;
+    }
+    .bg-landing h1 {
+        font-size: 15px;
+    }
+}
+
+@media(min-width: 700px) {
+    .fa-bars {
+        display: none;
+    }
+    .container {
+        width: 85%;
+    }
+    .card {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        align-items: center;
+    }
+    .card p {
+        height: 90px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    header nav ul {
+        display: flex;
+    }
+    .bg-landing {
+        height: 200px;
+    }
+    .bg-landing h1 {
+        font-size: 30px;
+    }
+}
+
+.fa-bars {
+    color: #fff;
 }
